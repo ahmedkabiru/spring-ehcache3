@@ -3,6 +3,7 @@ package com.hamsoft.springencache3.controller;
 import com.hamsoft.springencache3.model.Student;
 import com.hamsoft.springencache3.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -17,7 +18,7 @@ import java.util.Optional;
 /**
  * Created By kabiruahmed on Jan 2019
  */
-
+@Slf4j
 @RequestMapping("api/students")
 @RestController
 @RequiredArgsConstructor
@@ -35,8 +36,6 @@ public class StudentController {
 
     @PostMapping
     public ResponseEntity<Object> addStudent(@RequestBody Student student){
-        System.out.println("Student Name"+ student.getName());
-        System.out.println("Student Sex"+ student.getSex());
         studentService.addStudent(student);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(student.getId()).toUri();
