@@ -6,7 +6,7 @@ Java , Spring , H2 In-memory Database.
 
 *Step 1*: Add the the following dependencies to your pom.xml
 
-	<dependency>
+	        <dependency>
 			<groupId>org.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 			<version>3.6.2</version>
@@ -18,7 +18,7 @@ Java , Spring , H2 In-memory Database.
 			<version>1.1.0</version>
 		</dependency>
 
-	<dependency>
+	        <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
